@@ -24,6 +24,6 @@ private _alls_vls = (lVls + hVls + aVls + car + [["WeaponHolderSimulated"]]);
 	if (count crew _x isEqualTo 0)
 	then
 	{
-		deleteVehicle _x
-	}
-} forEach vehicles select {[typeOf _x] in _alls_vls};
+		deleteVehicle _x;
+	};
+} forEach (vehicles select {[typeOf _x] in _alls_vls});
