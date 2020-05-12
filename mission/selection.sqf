@@ -17,7 +17,7 @@ private _recherche_mission = {
 		_this select 1, 
 		compile format ["%1 execVM 'mission\recherche.sqf';", _this],
 		"Recherche de caisses", 
-		format ["Recherche de caisses numéro %1", _this select 0], 
+		format ["Recherche de caisses dans la zone %1", _this select 3], 
 		"D. I. S.", 
 		"", 
 		2, 
@@ -37,7 +37,7 @@ private _hvt_mission = {
 		_this select 1, 
 		compile format ["%1 execVM 'mission\hvt.sqf';", _this],
 		"HVT", 
-		format ["Mission HVT numéro %1", _this select 0], 
+		format ["Mission HVT dans la zone %1", _this select 3], 
 		"D. I. S.", 
 		"", 
 		2, 
@@ -66,15 +66,21 @@ then
 	{
 		// systemChat format ["caisses : %1", _x];
 		_m_num = _m_num + 1;
-		private _rad = parseNumber ((_x splitString " ") select 1);
-		_missions pushBack ([_m_num, markerPos _x, _rad] call _recherche_mission);
+		private _t = _x splitString " ";
+		_t deleteAt 0;
+		private _rad = parseNumber (_t deleteAt 0);
+		private _txt = _t joinString " ";
+		_missions pushBack ([_m_num, markerPos _x, _rad, _txt] call _recherche_mission);
 	} forEach ([allMapMarkers, "recherche "] call _start_with);
 	private _m_num = 200;
 	{
 		// systemChat format ["hvt : %1", _x];
 		_m_num = _m_num + 1;
-		private _rad = parseNumber ((_x splitString " ") select 1);
-		_missions pushBack ([_m_num, markerPos _x, _rad] call _hvt_mission);
+		private _t = _x splitString " ";
+		_t deleteAt 0;
+		private _rad = parseNumber (_t deleteAt 0);
+		private _txt = _t joinString " ";
+		_missions pushBack ([_m_num, markerPos _x, _rad, _txt] call _hvt_mission);
 	} forEach ([allMapMarkers, "hvt "] call _start_with);
 }
 else

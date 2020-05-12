@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14144.227,180.83128,822.84473};
-		dir[]={-0.59587729,-0.777466,0.20174424};
-		up[]={-0.7364682,0.62883961,0.24934222};
-		aside[]={0.3207235,6.2165782e-007,0.94729108};
+		pos[]={13959.526,135.23865,788.28271};
+		dir[]={0.58751732,-0.67998499,0.4389393};
+		up[]={0.54482418,0.73312944,0.40704441};
+		aside[]={0.59858304,1.780063e-007,-0.80120194};
 	};
 };
 binarizationWanted=0;
@@ -25798,7 +25798,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14045.587,7.0014386,883.961};
+						position[]={14045.587,7.0014391,883.961};
 						angles[]={0,3.4906585,0};
 					};
 					side="West";
@@ -25808,13 +25808,14 @@ class Mission
 					};
 					id=509;
 					type="B_UAV_AI";
+					atlOffset=4.7683716e-007;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14045.587,7.0014386,883.961};
+						position[]={14045.587,7.0014391,883.961};
 						angles[]={0,3.4906585,0};
 					};
 					side="West";
@@ -25824,6 +25825,7 @@ class Mission
 					};
 					id=510;
 					type="B_UAV_AI";
+					atlOffset=4.7683716e-007;
 				};
 			};
 			class Attributes
@@ -27721,7 +27723,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3996.353,16.149,12912.16};
-			name="hvt 1500 2";
+			name="hvt 1500 2 eqeqz ezeze 5";
 			type="Empty";
 			id=683;
 			atlOffset=-0.00017356873;
@@ -27757,11 +27759,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14096.148,17.399994,880.41602};
+				position[]={14059.621,17.126585,980.75842};
 			};
 			id=687;
 			type="ModuleCurator_F";
-			atlOffset=10.399994;
+			atlOffset=203.09659;
 			class CustomAttributes
 			{
 				class Attribute0
