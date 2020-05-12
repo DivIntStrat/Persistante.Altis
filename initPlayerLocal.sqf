@@ -2,6 +2,7 @@
 [] execVM "scripts\infos.sqf";
 [] execVM "R3F_LOG\init.sqf";
 [] execVM "scripts\respawn.sqf"; 
+[] execVM "scripts\show_fps.sqf";
 [] execVM "scripts\lights\generators.sqf";
 [] execVM "mission\init.sqf";
 tawvd_disablenone = true;
@@ -11,6 +12,7 @@ base addAction["<t color='#0D4C00'>Full heal</t>",{[player] call ace_medical_tre
 base addAction ["FOB","scripts\tp\fob.sqf",["fob"],1.5,true,true,"","true",5];
 selecteur addAction ["New mission","mission\selection.sqf",[],1.5,true,true,"","",5];
 selecteur addAction ["Nettoyage cadavres","scripts\cleanup.sqf",[],1.5,true,true,"","",5];
+selecteur setVariable ["R3F_LOG_disabled", true];
 ob setVariable ["R3F_LOG_disabled", true];
 halo addAction ["Saut", "scripts\halo\halo.sqf"];
 halo setVariable ["R3F_LOG_disabled", true];

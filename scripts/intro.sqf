@@ -17,11 +17,11 @@ sleep 10;
 1 =
 [
 	[
-		["Merci aux donateurs","align = 'center' size = '2' font='PuristaBold'","#417630"],
+		["Mission persistante","align = 'center' size = '2' font='PuristaBold'","#417630"],
 		["","<br/>"],
-		["Bruno, Dakup, Leethium","align = 'center' size = '1.5' font='PuristaBold'","#417630"],
+		["Explications disponibles sur carte","align = 'center' size = '1.5' font='PuristaBold'","#417630"],
 		["","<br/>"],
-		["MrCircus, Muscovitch, Rampa","align = 'center' size = '1.5' font='PuristaBold'","#417630"]
+		["dans les dernières entrées","align = 'center' size = '1.5' font='PuristaBold'","#417630"]
 	]
 ]
 spawn BIS_fnc_typeText2;

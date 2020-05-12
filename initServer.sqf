@@ -1,8 +1,8 @@
 [] execVM "R3F_LOG\init.sqf";
 [] execVM "scripts\rDate.sqf";
 [] execVM "scripts\rWeather.sqf"; 
-[] execVM "utilities\show_fps.sqf";
-[] execVM "utilities\addLocations.sqf";
+[] execVM "scripts\show_fps.sqf";
+[] execVM "scripts\addLocations.sqf";
 [] execVM "spawn\init.sqf";
 
 enableSaving [false, false];
