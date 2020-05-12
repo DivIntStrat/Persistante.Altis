@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={13959.526,135.23865,788.28271};
-		dir[]={0.58751732,-0.67998499,0.4389393};
-		up[]={0.54482418,0.73312944,0.40704441};
-		aside[]={0.59858304,1.780063e-007,-0.80120194};
+		pos[]={8097.6006,2541.9199,14580.393};
+		dir[]={-0.23719265,-0.80318171,0.5466854};
+		up[]={-0.31971246,0.59565544,0.73687118};
+		aside[]={0.91748387,-9.4692223e-007,0.39807346};
 	};
 };
 binarizationWanted=0;
@@ -27597,7 +27597,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6713.938,213.92799,19701.467};
-			name="recherche 5000 2";
+			name="recherche 5000 Agios Dionysios et Bomos";
 			type="Empty";
 			id=670;
 			atlOffset=0.00044250488;
@@ -27606,7 +27606,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={25730.316,26.511999,22873.848};
-			name="recherche 4000 3";
+			name="recherche 4000 Ioannina et le Cap Strigla";
 			type="Empty";
 			id=672;
 			atlOffset=-0.00012207031;
@@ -27615,7 +27615,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={9631.7178,0,10102.217};
-			name="recherche 5000 1";
+			name="recherche 5000 Agia Stemma et le Cap Makrinos";
 			type="Empty";
 			id=674;
 			atlOffset=7.1998916;
@@ -27714,7 +27714,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={14034.724,23.028,19303.342};
-			name="hvt 2000 1";
+			name="hvt 2000 d'Athira";
 			type="Empty";
 			id=682;
 			atlOffset=0.00026321411;
@@ -27723,7 +27723,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3996.353,16.149,12912.16};
-			name="hvt 1500 2 eqeqz ezeze 5";
+			name="hvt 1500 de Kavala";
 			type="Empty";
 			id=683;
 			atlOffset=-0.00017356873;
@@ -27732,7 +27732,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={17999.689,16.099001,13666.195};
-			name="hvt 2000 3";
+			name="hvt 2000 de Pyrgos";
 			type="Empty";
 			id=684;
 			atlOffset=-0.00044250488;

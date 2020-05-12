@@ -22,7 +22,7 @@ currMiss = _mission_number;
 private _briefing = format ["
 L’ennemi comptait se ravitailler via un avion-cargo qui a largué un nombre inconnu de caisses d’armes, de munitions, et d’équipement.
 C’était sans compter sur les forts vents qui balayent Altis :
-les caisses sont éparpillées dans la zone %1 et les ennemis les recherchent déjà activement.
+les caisses sont éparpillées entre %1 et les ennemis les recherchent déjà activement.
 Votre mission est d’empêcher que ces caisses tombent aux mains de l’ennemi. Pour cela plusieurs options s’offrent à vous.
 Vous pouvez les détruire sur place, ou les récupérer et les ramener à la fob si vous ne voulez pas vous encombrer de matériel de démolition.
 Vous pouvez aussi les ramener au P-A comme trophée, elles seront ensuite détruites ou redistribuées selon les besoins.
