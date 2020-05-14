@@ -64,8 +64,8 @@ while {true}
 do
 {
 	private _current_inf = call _count_inf;
-
-	// systemChat format ["Inf : %1", _current_inf];
+	private _human_players = allPlayers - entities "HeadlessClient_F";
+	systemChat format ["Inf : %1, Hum: %2", _current_inf, _human_players ];
 
 	if (_current_inf > _max_inf )
 	then
