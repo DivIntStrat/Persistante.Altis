@@ -68,7 +68,24 @@ do
 			};
 			private _type = car select (floor random (count car));
 			private _groups_parameters = [_pos call _near_road, CIVILIAN, _type];
-			_all_vls pushBack (_groups_parameters call BIS_fnc_spawnGroup);
+			private _vl = _groups_parameters call BIS_fnc_spawnGroup;
+			private _wp = 0;
+			for "_i" from 1 to 5
+			do
+			{
+				private _pos = ([[[getPos (units _x select 0), _patrols_radius]],["water"]] call BIS_fnc_randomPos) call _near_road;
+				private _dist = [_pos, _human_players] call _closest_player_distance;
+				while {_dist > _max_dist}
+				do
+				{
+					_pos = ([[[getPos (units _x select 0), _patrols_radius]],["water"]] call BIS_fnc_randomPos) call _near_road;
+					_dist = [_pos, _human_players] call _closest_player_distance;
+				};
+				_wp =_x addWaypoint [_pos, -1];
+				_wp setWaypointSpeed "LIMITED";
+			};
+			_wp setWaypointType "CYCLE";
+			_all_vls pushBack _vl;
 		};
 	};
 	
@@ -112,7 +129,7 @@ do
 			{
 				private _pos = ([[[getPos (units _x select 0), _patrols_radius]],["water"]] call BIS_fnc_randomPos) call _near_road;
 				private _dist = [_pos, _human_players] call _closest_player_distance;
-				while {(_dist < _min_dist) || (_dist > _max_dist)}
+				while {_dist > _max_dist}
 				do
 				{
 					_pos = ([[[getPos (units _x select 0), _patrols_radius]],["water"]] call BIS_fnc_randomPos) call _near_road;
@@ -123,7 +140,7 @@ do
 			};
 			_wp setWaypointType "CYCLE";
 		} forEach _all_vls;
-	} 
+	}
 	else 
 	{
 		_loop = _loop + 1;
