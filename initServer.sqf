@@ -3,6 +3,7 @@
 [] execVM "scripts\rWeather.sqf"; 
 [] execVM "scripts\show_fps.sqf";
 [] execVM "scripts\addLocations.sqf";
+[] execVM "mission\init.sqf";
 [] execVM "spawn\init.sqf";
 
 enableSaving [false, false];

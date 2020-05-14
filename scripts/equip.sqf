@@ -12,8 +12,7 @@ if (isPlayer _x)
 	        };
 	    };
 } forEach [
-god,
-god1
+god
 ];
 
 {
