@@ -4,7 +4,6 @@
 [] execVM "scripts\respawn.sqf"; 
 [] execVM "scripts\show_fps.sqf";
 [] execVM "scripts\lights\generators.sqf";
-[] execVM "mission\init.sqf";
 [] execVM "spawn\init.sqf";
 tawvd_disablenone = true;
 

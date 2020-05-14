@@ -87,7 +87,7 @@ else
 {
 	_missions = [
 		[
-			[15000,15000,0],
+			[14100,880,0],
 			{execVM "mission\end.sqf"},
 			"Fin de mission",
 			"Confirmation de fin de mission",
@@ -102,11 +102,11 @@ else
 
 private _map_params = [
 	_Display,
-	[15000,15000,10000],
+	[14100,880,10000],
 	_missions,
 	[
 		[
-			[0,0,0],
+			[13900,880,0],
 			missionConfigFile >> "CfgORBAT" >> "DIS",
 			missionConfigFile >> "CfgORBAT" >> "DIS",
 			[],
