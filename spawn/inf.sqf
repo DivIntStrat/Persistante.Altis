@@ -32,16 +32,18 @@ private _closest_player_distance = {
 };
 
 
-private _delay = 10; // s (time between each loops)
-private _big_delay = 10; // s (time between each loops)
+private _delay = 30; // s (time between each loops)
+private _big_delay = 4*60*60; // s (time between each loops)
 private _min_dist = 750; // m (stop spawn distance)
 private _max_dist = 3000; // m (start despawn distance)
-private _grp_spawn_cap = 2; // max number of group that can spawn each turn
+private _grp_spawn_cap = 4; // max number of group that can spawn each turn
 private _garnison_ratio = 0.5;
 private _aera_captured = false;
 private _aera_engaged = false;
+private _nb_loops = 20;
 
 
+private _loop = 0;
 while {currMiss != 0}
 do
 {
@@ -138,21 +140,29 @@ do
 	_patrolsGroups = _tmp;
 
 	// WAYPOINTS
+	if (_loop == _nb_loops)
+	then
 	{
-		// systemChat format ["Group %1 : %2", _x, waypoints _x];
-		// remove previous waypoints
-		if (count waypoints _x > 1)
-		then
 		{
-			for "_j" from count waypoints _x - 1 to 0 step -1
-			do
+			// systemChat format ["Group %1 : %2", _x, waypoints _x];
+			// remove previous waypoints
+			if (count waypoints _x > 1)
+			then
 			{
-				deleteWaypoint [_x, _j];
+				for "_j" from count waypoints _x - 1 to 0 step -1
+				do
+				{
+					deleteWaypoint [_x, _j];
+				};
+				// set nexts waypoints
+				[_x, getPos (units _x select 0), _radius] call bis_fnc_taskpatrol;
 			};
-			// set nexts waypoints
-			[_x, getPos (units _x select 0), _radius] call bis_fnc_taskpatrol;
-		};
-	} forEach _patrolsGroups;
+		} forEach _patrolsGroups;
+	} 
+	else 
+	{
+		_loop = _loop + 1;
+	};
 	sleep _delay;
 };
 

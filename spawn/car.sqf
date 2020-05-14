@@ -40,15 +40,15 @@ private _near_road = {
   	getPos (_spawnVh select 0);
 };
 
-private _delay = 10; // s (time between each loops)
-private _big_delay = 10; // s (time between each loops)
-private _min_dist = 1500; // m (stop spawn distance)
-private _max_dist = 4500; // m (start despawn distance)
+private _delay = 30; // s (time between each loops)
+private _min_dist = 1000; // m (stop spawn distance)
+private _max_dist = 3000; // m (start despawn distance)
 private _vl_spawn_cap = 1; // max number of group that can spawn each turn
 private _patrols_radius = 1.3 * _radius;
+private _nb_loops = 20;
 
 
-
+private _loop = 0;
 while {currMiss != 0}
 do
 {
@@ -95,31 +95,39 @@ do
 	_all_vls = _all_vls select {(count units _x) > 0};
 
 	// WAYPOINTS
+	if (_loop == _nb_loops)
+	then
 	{
-		// remove previous waypoints
-		for "_j" from count waypoints _x - 1 to 0 step -1
-		do
 		{
-			deleteWaypoint [_x, _j];
-		};
-		// set nexts waypoints
-		private _wp = 0;
-		for "_i" from 1 to 5
-		do
-		{
-			private _pos = ([[[getPos (units _x select 0), _patrols_radius]],["water"]] call BIS_fnc_randomPos) call _near_road;
-			private _dist = [_pos, _human_players] call _closest_player_distance;
-			while {(_dist < _min_dist) || (_dist > _max_dist)}
+			// remove previous waypoints
+			for "_j" from count waypoints _x - 1 to 0 step -1
 			do
 			{
-				_pos = ([[[getPos (units _x select 0), _patrols_radius]],["water"]] call BIS_fnc_randomPos) call _near_road;
-				_dist = [_pos, _human_players] call _closest_player_distance;
+				deleteWaypoint [_x, _j];
 			};
-			_wp =_x addWaypoint [_pos, -1];
-			_wp setWaypointSpeed "LIMITED";
-		};
-		_wp setWaypointType "CYCLE";
-	} forEach _all_vls;
+			// set nexts waypoints
+			private _wp = 0;
+			for "_i" from 1 to 5
+			do
+			{
+				private _pos = ([[[getPos (units _x select 0), _patrols_radius]],["water"]] call BIS_fnc_randomPos) call _near_road;
+				private _dist = [_pos, _human_players] call _closest_player_distance;
+				while {(_dist < _min_dist) || (_dist > _max_dist)}
+				do
+				{
+					_pos = ([[[getPos (units _x select 0), _patrols_radius]],["water"]] call BIS_fnc_randomPos) call _near_road;
+					_dist = [_pos, _human_players] call _closest_player_distance;
+				};
+				_wp =_x addWaypoint [_pos, -1];
+				_wp setWaypointSpeed "LIMITED";
+			};
+			_wp setWaypointType "CYCLE";
+		} forEach _all_vls;
+	} 
+	else 
+	{
+		_loop = _loop + 1;
+	};
 	sleep _delay;
 };
 

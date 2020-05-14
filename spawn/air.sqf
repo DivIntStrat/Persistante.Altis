@@ -26,7 +26,7 @@ private _closest_player_distance = {
 };
 
 
-private _delay = 10; // s (time between each loops)
+private _delay = 5*60; // s (time between each loops)
 private _min_dist = 1500; // m (stop spawn distance)
 private _max_dist = 4500; // m (start despawn distance)
 private _vl_spawn_cap = 1; // max number of group that can spawn each turn
